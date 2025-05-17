@@ -1,0 +1,29 @@
+<div class="container-reservation">
+    <div class="reservation-form">
+        <h2>Foglalás</h2>
+
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div class="success-message"><%= message %></div>
+        <% } %>
+
+
+        <form action="/reservation" method="post">
+            <label for="last_name">Vezetéknév</label>
+            <input type="text" name="last_name" id="last_name" required>
+
+            <label for="first_name">Keresztnév</label>
+            <input type="text" name="first_name" id="first_name" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="kid_ticket">Kedvezményes jegyek</label>
+            <input type="number" name="kid_ticket" id="kid_ticket" min="0" step="1" required>
+
+            <label for="adult_ticket">Teljes árú jegyek</label>
+            <input type="number" name="adult_ticket" id="adult_ticket" min="1" step="1" required>
+
+            <button type="submit">Foglalás</button>
+        </form>
+    </div>
+</div>

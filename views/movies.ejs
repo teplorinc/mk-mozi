@@ -1,0 +1,28 @@
+<div class="container-movies">
+    <h2>Heti filmkínálatunk:</h2>
+    <p>Akció és izgalom, érzelmes történetek, klasszikus meseújragondolás, videojáték és természetfilmek világa mind helyet kapnak a vásznon. Egy adrenalindús thriller, egy hétköznapi hős története, egy költői magyar feldolgozás, és egy különleges animációs kaland. A családoknak, romantikus lelkületűeknek és a könnyedebb kikapcsolódásra vágyóknak egyaránt akad remek választás.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cím</th>
+                <th>Premier</th>
+                <th>Korhatár</th>
+                <th>Feliratros</th>
+                <th>Nyelv</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach(movie => { %>
+                <tr>
+                    <td><%= movie.hungarian_title %></td>
+                    <td><%= new Date(movie.premiere_date).toLocaleDateString('hu-HU') %></td>
+                    <td><%= movie.age_rating %></td>
+                    <td><%= movie.subtitle === 1 ? 'Igen' : 'Nem' %></td>
+                    <td><%= movie.language %></td>
+                </tr>
+            <% }) %>
+                </tr>
+        </tbody>
+    </table>
+</div>

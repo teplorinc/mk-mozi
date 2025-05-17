@@ -1,0 +1,30 @@
+<div class="container-index">
+    <h2>Mai kínálatunk:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>cím</th>
+                <th>Korhatár</th>
+                <th>Nyelv</th>
+                <th>Feliratos</th>
+                <th>Időpont</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                const showtimes = ["12:00", "15:00", "18:00", "21:00"];
+                movies.forEach((movie, index) => { 
+            %>
+                <tr>
+                    <td><%= movie.hungarian_title %></td>
+                    <td><%= movie.age_rating %></td>
+                    <td><%= movie.language %></td>
+                    <td><%= movie.subtitle === 1 ? 'Igen' : 'Nem' %></td>
+                    <td><%= showtimes[index] %></td>
+                    <td><a href="/reservation" class="foglalas">Foglalás</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
